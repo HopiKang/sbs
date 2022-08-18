@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .div1{
+            border: 1px solid red;
+            margin: 50px;
+            border-radius: 10px;
+            border-top-left-radius: 50px; /* 왼쪽 위 */
+            border-top-right-radius: 5px; /* 오른쪽 위*/
+            border-bottom-left-radius: 0; /* 왼쪽 아래*/
+            border-bottom-right-radius: 20px; /* 오른쪽 아래 */
+        }
+        .div2{
+            border: 1px solid red;
+            margin: 50px;
+            background-color: blue;
+            width: 400px;
+            height: 300px;
+            box-shadow: 40px 10px 10px 20px #4d9fff;
+        }
+        h1{
+            background-color: red;
+        }
+        body{
+            background-color: aqua;
+        }
+        .div3{
+            box-sizing: border-box;
+            border: 1px solid red;
+            width: 300px;
+            height: 200px;
+            margin-bottom: 50px;
+        }
+        .div4{
+            box-sizing: border-box;
+            border: 1px solid red;
+            width: 300px;
+            height: 200px;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        이것은 div1입니다
+    </div>
+    <div class="div2">
+        이것은 div2입니다
+    </div>
+    <h1>hello</h1>
+    <div class="div3">
+        hello world
+    </div>
+    <div class="div4">
+        hello world
+    </div>
+</body>
+</html>
+<!-- 
+
+모서리 둥글게 
+border-radius
+값이 크면 더 둘글게 만들수있다
+
+배경색
+background-color
+rgb코드나 Hex코드중 하나를 입력하면된다
+투명하게
+transparent , 하지않으면 기본값으로된다
+
+그림자
+box-shadow: 오른쪽 아래 연함 연함정도(흐려짐, 퍼짐) 색(rgb, Hex)
+
+박스의 사이즈를 절대적으로 정함
+box-sizing
+기본값은 content-box이다
+
+
+전체 스타일
+스타일안에넣거나 링크를건 css파일에 넣어주면됨
+*{
+    box-sizing: border-box
+}
+  -->
