@@ -1,0 +1,30 @@
+.div1{
+    height: 500px;
+    border: 5px solid green;
+    background-image: url("../imges/snow.png");
+
+    background-repeat: no-repeat; /*반복하지않는다*/
+    /*background-repeat: repeat-x; /*가로방향으로만 반복한다*/
+    /*background-repeat: repeat-y; /*세로방향으로만 반복한다*/
+    /*background-repeat: repeat; /*가로세로방향으로만 반복한다*/
+    /*background-repeat: space; /*반복할 수 있을만큼만 반복한 후 나머지 공간은 이미지 간의 여백으로 배분해준다*/
+    /*background-repeat: round; /*반복할 수 있을만큼 반복한 후 남는 공간은 이미지 확대를 통해 배분한다*/
+
+    /*background-size: auto; /*원래 이미지 사이즈대로 출력*/
+    /*background-size: cover; /*화면을 꽉채우면서, 사진 비율을 유지*/
+    /*background-size: auto; /*가로, 세로 중 먼저 채워지는 쪽에 맞추어서 출력*/
+    /*background-size: 30px; /*30px 50px 가로30 세로50으로 설정된다*/
+    /*background-size: 60% 70%; /*가로: 부모요소 width의 60%, 세로 : 부모 요소의 heigh의 70%로 설정*/
+
+    /* background-position: left  top; */
+    /* background-position: left center; */
+    /* background-position: left bottom; */
+    /* background-position: right top; */
+    /* background-position: right center; */
+    /* background-position: right bottom; */
+    /* background-position: center top; */
+    /* background-position: center center; */
+    /* background-position: center bottom; */
+    /* background-position: 25% 75%; */
+    /* background-position: 100px 20px; 왼쪽에서부터 100px 상단에서부터 200px에 위치함*/
+}

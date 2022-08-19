@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Topic</title>
+    <link href="css/Topic.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <button class="bouttonstyle" type="button">전송</button>
+    <br><br><br>
+    <label  for="fruits-choice">과일을 선택하세요: </label>
+    <input list="fruits-lists" id="fruits-choice" name="fruits-choice" />
+    <datalist id="fruits-lists">
+        <option value="사과">
+        <option value="딸기">
+        <option value="복숭아">
+        <option value="바나나">
+        <option value="포도">
+        
+    </datalist>
+
+    <br><br><br>
+    <label  for="pet-choice">애완동물을 선택하세요: </label>
+    <select name="pets" id="pet-select">
+        <option value="dog">개</option>
+        <option value="cat">고양이</option>
+        <option value="fish">물고기</option>
+        <option value="dragon">용</option>
+        <option value="iguana">이구아나</option>
+    </select>
+
+    <br><br><br>
+    <label  for="food-select">음식을 선택하세요: </label>
+    <select id="food-select">
+        <optgroup label="한식">
+            <option>비빔밥</option>
+            <option>설렁탕</option>
+            <option>7첩반상</option>
+        </optgroup>
+
+        <optgroup label="중식">
+            <option>자장면</option>
+            <option>짬뽕</option>
+            <option>양장피</option>
+        </optgroup>
+    </select>
+
+    <br><br><br>
+    <form>
+        <fieldset>
+            <legend>최고의 가수를 선택하세요.</legend>
+            <input type="radio" id="iu" name="singer">
+            <label for="iu">아이유</label><br>
+            <input type="radio" id="blackpink" name="singer">
+            <label for="blackpink">블랙핑크</label><br>
+            <input type="radio" id="bts" name="singer">
+            <label for="bts">BTS</label><br>
+        </fieldset>
+    </form>
+
+    <br><br><br>
+    <label for="story">내용(줄거리)</label>
+    <textarea id="story" name="story" rows="5" cols="3">
+        여기에 작성하세요.
+    </textarea>
+
+    <br><br><br>
+    <label for="fuel">연료:</label>
+    <metar id="fuel" min="0" max="100" low="50" high="80" value="30"></metar>
+    
+    <br><br><br>
+    <label for="progress">전송률</label>
+    <progress id="progress" max="100" value="90">90%</progress>
+
+</body>
+</html>
+
+<!-- 
+버튼
+<botton type>
+
+데이터리스트
+<label  for="fruits-choice">과일을 선택하세요: <label>
+
+메뉴제공
+select
+
+대분류 또는 중분류
+outgroup
+
+요소의 정보를 전송하기 위한 대화형 컨트롤의 영역을 표시해 준다
+<form></form>
+
+웹 양식의 컨트롤과 레이블을 묶을때 사용
+</fieldset>
+
+라디오버튼
+radio
+
+textarea
+멀티라인으로 여러줄 텍스트를 입력하여 전송 또는 폅집을 할수 있는 컨트롤러
+row 행
+cols 열
+
+meter
+특정 범위 내에서의 스칼라 값 또는 백분율 값을 나타낸다
+ -->
