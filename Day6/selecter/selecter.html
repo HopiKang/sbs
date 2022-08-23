@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+
+    <style>
+        /* h1{
+            color: orange;
+        } */
+
+        /* .important{
+            color: orange;
+        }
+
+        #favorite{
+            color: blue;
+        } */
+        /* .div1 i{
+            color: orange;
+        } */
+
+        /* div1의 직속자식 i만
+        .div1 > i{
+            color: orange;
+        } */
+
+        /*  two와 four전부
+        .two, four{
+            color: orange;
+        } */
+
+        /* 아웃사이드랑 원을가진 클래스만 
+        .outside.one{
+            color: blue;
+        }*/
+        /* 인사이드와 투를 가진 클래스만 
+        .inside.two{
+            color: orange;
+        }*/
+
+        /* div1 안의 p테그중 3번째 자식만 
+        .div1 p:nth-child(3){
+            color: blue;
+        }*/
+        /* div1 안의 p테그중 첫번째 자식만 
+        .div1 p:first-child{
+            color: red;
+        }*/
+        /* div1안의 p테그중 마지막 자식만뺀 
+        .div1 p:not(:last-child){
+            font-size: 150%;
+        }*/
+        /* div1안의 p테그중 첫번째 자식이 아닌것만
+        .div1 p:not(:first-child){
+            font-size: 150%;
+        } */
+
+        h1{
+            color: orange;
+        }
+        /* 마우스가 올라가면 색깔이바뀜 */
+        h1:hover{
+            color: green;
+        }
+    
+    
+    </style>
+</head>
+<body>
+    <!-- <h1>heading</h1>
+    <h2>heading</h2> -->
+
+    <!-- <p class="important">paragraph</p>
+    <p>paragraph2</p>
+    <p class="important">paragraph3</p>
+    <p class="important">paragraph4</p>
+    <p id="favorite">paragraph5</p>
+    <p>paragraph6</p> -->
+
+    <!-- 클래스를 갖고 있는 요소의 자식 중 모든 i  
+    <i>outside</i>
+    <div class="div1">
+        <i>inside1</i>
+        <p>blah blah<i>inside2</i></p>
+        <i>inside3</i>
+    </div> -->
+
+    <!-- 직속자식은 한단계 아래만 속한다 두단계 안쪽에 속한것은 적용이안됨 
+    <i>outside</i>
+    <div class="div1">
+        <i>inside1</i>
+        <p>blah blah<i>inside2</i></p>
+        <i>inside3</i>
+    </div>-->
+
+    <!-- 복수 선택 
+    <p class="one">outside1</p>
+    <p class="two">outside2</p>
+    <div>
+        <p class="one">inside1</p>
+        <p class="two">inside2</p>
+        <p class="three">inside3</p>
+        <p class="four">inside4</p>
+        <p class="five">inside5</p>
+    </div> -->
+
+    <!-- 여러조건 
+    <p class="outside one">outside1</p>
+    <p class="outside two">outside2</p>
+    <div>
+        <p class="inside one">inside1</p>
+        <p class="inside two">inside2</p>
+        <p class="inside three">inside3</p>
+        <p class="inside four">inside4</p>
+        <p class="inside five">inside5</p>
+    </div> -->
+
+    <!-- :을 사용하면 몇가지 가상 클래스를 선택할 수 있다
+    <div class="div1">
+        <p>paragraph 1</p>
+        <p>paragraph 2</p>
+        <p>paragraph 3</p>
+        <p>paragraph 4</p>
+        <p>paragraph 5</p>
+        <p>paragraph 6</p>
+    </div> -->
+
+    <h1>hello</h1>
+</body>
+</html>

@@ -1,0 +1,78 @@
+@font-face{
+  src: url("../fonts/BMJUA_otf.otf");
+  font-family: BMJUA;
+ } /* 폰트지정 */
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #f0e8d9;
+}
+
+
+h1{
+  text-align: center;
+  color: #58595b;
+  font-size: 64px;
+  margin-top: 75px;
+  font-family: BMJUA;
+}
+
+h2{
+  text-align: center;
+  color: #58595b;
+  font-size: 32px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: BMJUA;
+}
+
+.two{
+  margin-bottom: 50px;
+  width: 300px;
+}
+
+.food{
+  background-color: white;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+
+.food h3{
+  color: #58595b;
+  font-size: 32px;
+  font-family: BMJUA;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.food p{
+  color: #58595b;
+  font-size: 16px;
+  font-family: BMJUA;
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.food a{
+  color: #00e;
+  font-size: 16px;
+  font-family: BMJUA;
+  text-decoration: none;
+}
+
+.info{
+  padding: 20px;
+  text-align: center;
+}
+
+.food img{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
