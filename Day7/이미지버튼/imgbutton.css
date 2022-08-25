@@ -1,0 +1,12 @@
+h1{
+    display: block;
+    text-align: center;
+}
+
+.img{
+    text-align: center;
+}
+
+.img a:not(:last-child){
+    margin-right: 2px;
+}
