@@ -1,0 +1,17 @@
+.container {
+  width: 500px;
+  height: 230px;
+  position: relative;
+}
+
+.info {
+  position: absolute;
+  top: 330px;
+  left: 30px;
+}
+
+.stamp {
+  position: absolute;
+  top: 110px;
+  right: 30px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+
+    <style>
+      .red {
+        background-color: red;
+        width: 600px;
+        height: 600px;
+        position: relative;
+      }
+
+      .green {
+        background-color: green;
+        width: 400px;
+        height: 400px;
+        position: relative;
+        top: 40px;
+        left: 90px;
+      }
+
+      .blue {
+        background-color: blue;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="red">
+      <div class="green">
+        <div class="blue"></div>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- 
+요소들은 기본적으로 static값을 갖는다
+
+position: relative;
+요소를 기준으로
+
+position: fixed;
+브라우저를기준으로
+
+position: absolute;
+부모를 기준으로 움직인다
+
+ -->
