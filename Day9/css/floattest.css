@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.img1{
+    float: left;
+    margin-right: 30px;
+}
+
+.text{
+
+}
+
+.img2{
+    float: right;
+    margin-left: 30px;
+}

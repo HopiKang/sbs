@@ -1,0 +1,48 @@
+body{
+    margin: 0px;
+}
+
+.col{
+    height: 200px;
+    float: left;
+}
+
+.col-1{
+    width: 200px;
+}
+
+.col-2{
+    width: 400px;
+}
+
+.col-3{
+    width: 600px;
+}
+
+/* #div1{
+    float: left;
+} */
+/* 
+#div2{
+    clear: left;
+} */
+/* 
+#div3{
+    float: left;
+}
+
+#div4{
+    float: left;
+} */
+/* 
+#div5{
+    clear: right;
+} */
+
+.grid{
+    border: 2px solid black;
+}
+
+.clearfix{
+    clear: left;
+}

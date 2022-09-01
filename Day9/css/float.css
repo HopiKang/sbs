@@ -1,0 +1,20 @@
+div{
+    height: 100px;
+}
+
+.blue{
+    background-color: blue;
+    width: 300px;
+    /* float: right; */
+    float: left;
+    
+}
+
+.yellow{
+    background-color: yellow;
+
+}
+
+.green{
+    background-color: green;
+}

@@ -1,0 +1,37 @@
+body{
+    margin: 0px;
+}
+
+div{
+    height: 200px;
+    float: left;
+}
+
+.div1{
+    background-color: red;
+    width: 100%;
+}
+.div2{
+    background-color: orange;
+    width: 25%;
+}
+.div3{
+    background-color: yellow;
+    width: 50%;
+}
+.div4{
+    background-color: green;
+    width: 25%;
+}
+.div5{
+    background-color: blue;
+    width: 50%;
+}
+.div6{
+    background-color: indigo;
+    width: 50%;
+}
+.div7{
+    background-color: purple;
+    width: 100%;
+}
