@@ -1,0 +1,64 @@
+
+.menu{
+    width: 200px;
+    height: 970px;
+    background-color: black;
+    position: absolute;
+}
+
+.menu div{
+    text-align: center;
+}
+
+ol{
+    width: 100px;
+    list-style: none;
+    padding-left: 20px;
+}
+
+ol a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.logo1 img{
+    margin: 20px;
+}
+
+.logo2 img{
+    padding: 5px;
+}
+
+
+.main{
+    background-image: url(../img/hero_header.jpg);
+    background-size: cover;
+    /* 이미지 크기내에서 제일크게 설정 */
+    background-position: center center;
+    text-align: center ;
+    height: 970px;
+
+}
+
+.textbox{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+h1{
+    margin: 0;
+    color: white;
+    font-size: 38px;
+    line-height: 500px;
+}
+
+
+.textbox a{
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+    
+}
+

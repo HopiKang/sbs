@@ -1,0 +1,11 @@
+ol{
+    padding-left: 0%;
+    width: 200px;
+}
+li{
+    list-style: none;
+    background-color: #77abff;
+    margin-bottom: 10px;
+    color: white;
+    padding: 10px 20px;
+}
