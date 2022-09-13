@@ -1,0 +1,145 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar{
+    background-image: url(../img/main_img.jpg);
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.text{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+h1{
+    height: 50px;
+    background-color: gray;
+    color: white;
+    font-size: 30px;
+    margin: 0;
+}
+
+h2{
+    font-size: 16px;
+    color: #4A4A4A;
+}
+
+h2{
+    font-size: 20px;
+    color: #1B1B1B;
+}
+
+p{
+    font-size: 16px;
+    color: #7A7A7A;
+}
+
+.div1{
+    background-image: url(../img/img1.jpg);
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.div2{
+    background-image: url(../img/img2.jpg);
+    height: 200px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.div2 a{
+    text-decoration: none;
+    padding: 9px 40px;
+    border: 1px solid white;
+    line-height: 200px;
+    color: white;
+}
+
+.div3{
+    background-image: url(../img/img3.jpg);
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+@media(min-width: 500px){
+    .text{
+        padding-left: 65px;
+        padding-right: 65px;
+    
+    }
+
+    .div1{
+        width: 50%;
+        float: left;
+    }
+
+    .div2{
+        width: 50%;
+        float: right;
+    }
+
+    .div2 a{
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        border: 4px solid white; 
+    }
+
+    .div3{
+        width: 50%;
+        float: right;
+    }
+}
+
+@media(min-width: 992px){
+    .navbar{
+        float: left;
+        width: 50%;
+        height: 800px;
+    }
+
+    .text{
+        padding-right: 65px;
+        padding-left: 65px;
+        height: 440px;
+        width: 50%;
+        float: right;
+        vertical-align: middle;
+    }
+    
+    .div1{
+        width: 25%;
+    }
+
+    .div2{
+        height: 200px;
+        width: 25%;
+    }
+
+    .div3{
+        height: 200px;
+        width: 25%;
+    }
+
+
+}
+
