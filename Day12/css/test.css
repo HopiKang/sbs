@@ -1,0 +1,45 @@
+html {
+  font-family: sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid #c8c8c8;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+th,
+td {
+  border: 1px solid #c8c8c8;
+  padding: 10px 20px;
+}
+
+th {
+  background-color: #87bdd8;
+}
+
+td {
+  text-align: center;
+}
+
+tbody {
+  font-size: 90%;
+  font-style: italic;
+}
+
+tfoot {
+  font-weight: bold;
+}
+
+tr:nth-child(even) td {
+  background-color: #cfede8;
+}
+
+tr:nth-child(odd) td {
+  background-color: #b7d7e8;
+}
+
+caption {
+  padding: 10px;
+}
