@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="Jsp.css">
+</head>
+<body>
+    <script src="Jsp.js"></script>
+
+    <p>안녕 JavaScript</p>
+    <script>
+        
+        para.addEventListener('click', updateName);
+        
+        function updateName() {
+            let name = prompt('이름을 입력해 주세요')
+            para.textContent = 'Player 1: ' + name;
+        }
+        
+        function createParagraph() {
+            let para = document.createElement('p');
+            para.textContent = '버튼은 클릭 하셨습니다';
+            document.body.appendChild(para);
+        }
+
+        const para = document.querySelector('p');
+
+        singer = '블랙핑크'
+        console.log(singer);
+
+    </script>
+    <button onclick="createParagraph()">눌러주세요.</button>
+</body>
+</html>
+
+<!-- 
+console
+
+let enteraier = '아이유'; // 변수 선언하면서 값을 바로 넣을 수 있음
+let singers;
+singers = enteraier;
+console.log(enteraier);
+아이유
+
+console.log(1 + 8)
+9 
+console.log(5 / 2)
+2.5
+console.log(7 % 3)
+1
+console.log(2 ** 2)
+4
+//사칙연산의 규칙을 따른다
+
+var myInt = 5;
+var myFloat = 6.667;
+myInt
+5
+myFloat
+6.667
+typeof myInt;
+'number'
+typeof mtFloat;
+'number'
+
+x = x + 1;
+x += 1;
+같다
+x = x * 2;
+x *= 2;
+같다
+
+width10 height20
+둘레 perimeter 넓이 area
+ver width = 10;
+ver height = 20;
+ver perimeter = (width + height) * 2;
+ver area = width * height;
+ -->
+
+<!-- 
+console
+
+var string = '문자열'
+string
+문자열
+
+var single = "문자열"
+single
+문자열
+
+ -->
+
+<!--
+절자지향과 객체지향
+소스 코드를 어디서부터 읽느냐
+
+절차지향은 소스코드를위에서부터 차례대로 읽는 방법
+실행속도가 빠르다
+사소한문제 하나만 생겨도 프로그램이 돌아가지않을 수 있다
+실행순서가 정해져있어 코드의 순서가 바뀌면 문제가생길 수 있다
+
+객체지향은 코드를 객제단위로 묶어서 조합하는것
+역할과 기능을 이해해야 하고 설계에 많은 시간이 소요된다
+처리속도가 절차지향보다 느리다
+
+ecma
+jsp표준
+문법별로 브라우저에 지원하는지를 알아볼수있다
+표준은 ecmascp 2015가 표준이다
+
+caniues.com
+ecma와 기능이비슷함
+
+javascript 주석(코멘트)
+// 한줄
+/* */ 여러줄
+코드설명을 적어줄수있다(상세하게 적어줘야한다)
+사용하지 않는 코드를 무시할수있다
+
+변수
+정수형, 실수형, 문자, 문자열이 있다
+
+shift + enter
+한줄더쓰기
+
+기본문법
+1. javascript 식별자 '문자(a-z,A-Z)','밑줄(_)' 혹은 달러기호($)로
+시작해야한다. 두번째 글자부터는 숫자도 가능하다
+2. 대문자와 소문자는 구별한다 myname과 myName은 다르다
+3. 예약어(javascrip가 찜해놓은단어, 지정된단어)사용하면 안된다
+예를들면 if, for, var 같은것
+
+지키면 좋은룰
+1. 의미없는 이름은 좋지않다
+a, b, c
+2. 너무 추상적인 이름은 좋지않다
+var name
+3. 모든 변수 이름은 camelCase로 쓴는 것이 좋다
+var bad_variable_name; x
+var badVariableName; O
+
+var, let, const 차이점
+var은 function 
+let, const은 block
+
+호이스팅이란
+var는 undefined로 변수를 초기화 한다
+- var는 선언과 초기화가 거의 동시에이루어진다
+  (코드 최상단에서 해당 변수에대한 참조 할당이 가능하다)
+let과 const로 선언한 변수는 호이스팅시에 변수를 초기화하지 않는다
+- let과 const는 호이스팅이 발생하면 선언만 이루어지고 실행시점에서
+  선언부를 만날때까지 초기화가 이루어지지않는다
+  (선언부 상단에서 참조 할당이 불가능하다)
+
+
+undefined과 null의 차이점
+undefined
+변수를 선언하고 해당변수의 자료형이 정해지지 않은상태를 말한다
+null
+변수를 선언하고 자료형이 정해진 defined상태(빈 객체)
+1 == '1' true
+1 === '1' false
+
+자료형과 숫자형
+원시타입과 객체로 구분된다
+원시타입
+Boolean
+Null
+Undefined
+bigint
+string
+symbol
+객체타입
+(속의 컬렉션)
+-->
+
