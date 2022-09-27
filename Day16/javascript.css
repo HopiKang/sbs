@@ -1,0 +1,36 @@
+#myNumber {
+  font-size: 100px;
+}
+
+.color-bnt {
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.red {
+  background-color: #ff0000;
+}
+.orange {
+  background-color: #ffa500;
+}
+.yellow {
+  background-color: #ffff00;
+}
+.green {
+  background-color: #008000;
+}
+.blue {
+  background-color: #0800ff;
+}
+.indigo {
+  background-color: #480082;
+}
+.purple {
+  background-color: #80000080;
+}
+.black {
+  background-color: black;
+}
