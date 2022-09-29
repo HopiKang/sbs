@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LoginPage</title>
+    <link href="LoginPage.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <script src="LoginPage.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <div class="login-from">
+      <form>
+        <input type="text" name="email" class="text-field" placeholder="아이디" /><br />
+        <input type="password" name="password" class="text-field" placeholder="비밀번호" /><br />
+        <input type="submit" value="로그인" class="submit-btn" />
+      </form>
+      <div class="links">
+        <a class href="#">비밀번호를 잊어버리셨나요?</a>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- 
+1. 아이디 혹은 비밀번호 둘중 하나라도 입력란이 비어있다면,
+로그인 버튼이 비활성화되어서 버튼색이 #9b9b9b로 설정
+null이거나 undefinde이면 색설정
+
+2. 사용자가 아이디와 비밀번호를 둘 다 입력하면
+로그인 버튼이 활성화 되어서 버튼의 배경색이
+#1bbc9b로 바뀐다
+
+ -->

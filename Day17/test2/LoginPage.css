@@ -1,0 +1,48 @@
+body {
+  background-color: lightgoldenrodyellow;
+  border: 5px black;
+  margin: 0;
+}
+
+.login-from {
+  text-align: center;
+  background-color: grey;
+  width: 300px;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.text-field {
+  width: 280px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.submit-btn {
+  background-color: lightgoldenrodyellow;
+  color: black;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+}
+
+.links {
+  margin-top: 30px;
+  text-align: center;
+}
+.links a {
+  color: black;
+}
+
+.submit-btn:hover {
+  box-shadow: 5px 5px rgb(0, 0, 0, 0, 5);
+
+  /* 2초후 반응 */
+  transition-delay: 2s;
+}
