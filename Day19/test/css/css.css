@@ -1,0 +1,13 @@
+.center {
+  text-align: center;
+}
+.no-deco {
+  text-decoration: underline none;
+}
+.weight {
+  font-weight: bold;
+}
+
+#home {
+  font-weight: bold;
+}
