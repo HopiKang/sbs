@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>비표준속성, 이벤트핸들러 등록, 이벤트버블링, 테이블 정렬</title>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="index.js" defer></script>
+
+    <!-- 비표준속성 
+    <p>할 일 : <b field="title"></b></p>
+    <p>담당자 : <b field="manager"></b></p>
+    <p>상 태 : <b field="status"></b></p>
+    <div>
+      상태 변경:
+      <button class="btn" status="대기중">대기중</button>
+      <button class="btn" status="진행중">진행중</button>
+      <button class="btn" status="완료">완료</button>
+    </div> -->
+
+    <!-- 이벤트핸들러 
+    <div>
+      <button id="myBtn">자바스크립트 클릭</button>
+      <button onclick="console.log('hello Everyone')">클릭해주세요</button>
+    </div> -->
+    <!-- 이벤트 버블링
+    <div id="content">
+      content
+      <h1 id="title">오늘 계획</h1>
+      <ol id="list">
+        list
+        <li class="item">자바스크립트</li>
+        <li class="item">영화</li>
+        <li class="item">드라이브</li>
+        <li class="item">넷플릭스</li>
+        <li class="item">보드게임</li>
+      </ol>
+    </div> -->
+    <!-- 테이블 정렬 -->
+    <table id="grid">
+      <thead>
+        <tr>
+          <th data-type="number">수량</th>
+          <th data-type="string">종류</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5</td>
+          <td>수박</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>사과</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>포도</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>참외</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

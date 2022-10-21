@@ -1,0 +1,53 @@
+/* 비표준속성 */
+/* [status] {
+   []는 css 속성이름이다 
+  padding: 5px 10px;
+}
+
+[status='대기중'] {
+  background-color: #ff6767;
+  color: #ffffff;
+}
+
+[status='진행중'] {
+  background-color: #5f62ff;
+  color: #ffffff;
+}
+
+[data-status='완료'] {
+  background-color: #07c456;
+  color: #ffffff;
+} */
+
+/* 이벤트 버블링 */
+/* body * {
+  padding: 7px 10px;
+  margin: 5px 8px;
+  color: #ffffff;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 500;
+} */
+
+/* 테이블 정렬 */
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 4px;
+}
+
+th {
+  cursor: pointer;
+}
+
+th:hover {
+  background-color: lightpink;
+}
