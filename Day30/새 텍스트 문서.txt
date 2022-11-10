@@ -1,0 +1,160 @@
+현장에서는 gui에서는 사용하지않는다
+
+처음 새쿼리를 만들때 자기가 만들어야하는
+데이터베이스 위치를 적용해야한다
+항상 실행할때 블록을씌우고 실행하거나 
+use 데이터베이스이름을 맨위에 적고 실행해야한다
+
+고객 데이터 	 ------>
+창고 데이터	 ------>		 SAP(ERP) 경영
+데이터	             ------>
+       EAI, PO가 특정한 지나가는데이터를 확인하고 SAP으로 보내줌
+테스트를 위해서 엑셀로 데이터를 만들어놓고
+sql로 데이터를 옮겨보기도한다
+데이터베이스에 EAI, PO가 반응하게 형식에 맞게 데이터를 밀어넣어본다
+ 
+USE DB3
+create table members(
+	ID INT NOT NULL,
+	EMAIL nvarchar(50) NOT NULL,
+	AGE INT NOT NULL,
+	GENDER nvarchar(5) NOT NULL,
+	HEIGHT numeric(5,1) NULL,
+	WEIGHT numeric(5,1) NULL,
+	BIRTHDAY DATE NOT NULL,
+	SING_UP_DAY DATE NOT NULL,
+	ADDRESS NVARCHAR(50) NULL,
+	PRIMARY KEY(ID)
+	)
+
+select * from members
+
+해당연 찾아보기
+select ID, AGE + 1, BIRTHDAY FROM members
+select id, age, birthday from members
+대문자 소문자 차이가없다
+age에 +1해서 데이터를 가져왔지만 기본데이터에는 변화가없다
+
+as키워드로 열이름을 정해줄수있다
+age에 +1했을때 열이름이 없게나온다
+나중에 데이터를 가져올때 열이름일 일치해야 가능하다
+그럴때는 age + 1 as 나이 라고 적으면 열이름이 나이로 나오게된다
+
+기본키
+해당테이블의 특정열을 기본으로 지정해서
+특정컬럼을 프로머리키로 특정하는것
+로우가 되는것을 자동으로 막아주고 중복을 막아준다
+프로머리키는 종류가 두가지이다
+1. natural key (중요함)
+-사람의 주민등록번호로 사람을 특정하는거랑 같다
+2. surrogate key
+-어떤 회원을 특정적으로 나타내는 컬럼이 아니라
+ 순서대로 만들어놓은 프로머리키이다
+
+테이블 삭제,수정하기
+테이블오른쪽 클릭해서 디자인클릭해서 열이름을 바꿀수있다
+테이블오른쪽 클릭해서 삭제
+-테이블이 만약 다른테이블과 관계가 맺어져있다면 오류가 나타나고
+ 삭제가 되지않는다
+
+주석추가하기 -- 주석내용
+드레그하고 ctrl  k+c 
+k+u하면 해제
+
+테이블 열추가하기(컬럼추가)
+alter table 테이블이름 add 열이름 데이터형식 
+
+테이블 기본값설정
+alter table 사용자 add 취미 nvarchar(10) default '영화' not null -- 컬럼 추가(기본값 설정)
+default값은 빈칸이 null값이여만 값이 들어간다
+
+기본키추가
+alter table 사용자 add constraint [사용자_pk] primary key 사용자 ID -- 기본키 추가
+PK FK 키에 정의해줄때 constraint 를 사용한다
+
+isdate
+1아니면 0을 반환함
+데이터 형식에 맞지않으면 0을 반환한다
+select isdate('04/15/2008')
+select isdate('04 15 2008') 
+select isdate('04.15.2008') 
+
+select isdate('15/04/2008')
+select isdate('04 2008 15') 
+select isdate('2008.15.04') 
+
+
+--주문수량 열이 0이하면 값이 못들어오게
+alter table 매출 add constraint [매출_ck2] check([매출수량] >=0)
+
+데이터타입바꾸기
+alter table 사용자 alter column 취미 nvarchar(50) 
+기존데이터가 nverchar50이내 크기여야만 변경이 가능하다
++ not null도 가능하다
+
+데이터삭제
+truncate table 테이블이름
+사용자테이블 데이터를 모두 삭제하기때문에 조심해서 사용해야한다
+백업하지않았다면 복구가 불가하다
+열은 삭제되지않고 열안의 데이터만 삭제된다
+
+테이블삭제
+drop table 테이블이름
+열이 모두다 삭제된고 테이블도 삭제된다
+
+열삭제
+alter table 테이블이름 drop column 컬럼이름(열이름)
+
+exec sp_helpconstraint 사용자
+사용자테이블을 검색할수있다
+pk로 지정된 컬럼을 확인할수있다 
+
+CRUD란
+대부분의 컴퓨터 소프트웨어가 가지는 기본적인
+데이터 처리 기능인 생성 읽기 갱신 삭제를 묶어서 일컫는 말이다
+(정보의 참조/검색/갱신)을 가리키는 용어로서도 사용된다
+
+insert 데이터추가하기
+insert into 테이블명 (컬럼1, 컬럼2) values ('값1','값2')
+-컬렴1과 컬럼2에 값1과 값2를 넣는것이다
+-컬럼을 비워놓는경우는 좋지않다
+예
+insert into 제품 (제품코드, 제품명) values ('A1', '연필')
+insert into 제품 (제품코드, 제품명) values ('A2', '볼펜'), ('A3','샤프')
+
+update
+update 테이블명 set 컬럼1 '변경값' 코드 지우개 
+select * from 제품 where 제품코드  = 'A1' -- 확인하기
+update 제품 set 제품명= '지우개' where 제품코드  = 'A1'
+-----------------------------------------------------
+select * from 제품 A
+where a.제품코드 = 'A1' -- 별칭사용하기
+
+delete
+delete from 테이블명 where  칼럼1 = '삭제할대상값'
+delete from 제품 where  제품코드 = 'A1'
+
+select참조
+
+tset
+use DB3
+
+create table 매출(
+	일자 nvarchar(08),
+	제품 nvarchar(30),
+	수량 numeric(18,0) default 0,
+	단가 numeric(18,0) default 0,
+	금액 numeric(18,0) default 0,
+	primary key(일자)
+)
+
+insert into 매출 (일자, 제품, 수량, 단가, 금액) values ('20201001','A3','10','100','1000')
+
+insert into 매출 (일자, 제품) values ('20200101','A4')
+
+insert into 매출 (일자, 제품, 수량, 단가, 금액) values ('20200101','A5','30','100','3000') , ('20200101','A6','40','100','4000')\
+또는
+insert into 매출 (일자, 제품, 수량, 단가, 금액) select ('20200101','A5','30','100','3000') union all select ('20200101','A6','40','100','4000')
+
+select * from 매출
+
