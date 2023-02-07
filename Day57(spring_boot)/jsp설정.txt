@@ -1,0 +1,37 @@
+spring boot jsp 설정 검색
+
+jsp 는 war 표준에 따라 src/main/webapp 경로이다
+
+jsp
+application.properties에 경로설정
+spring.mvc.view.prefix=/WEB-INF/
+spring.mvc.view.suffix=.jsp
+
+build.gradle 안에
+
+dependencies{
+	implementation 'javax.servlet:jstl:1.2'
+	implementation 'org.apche.toncat.enbed:toncat-embed-jasper'
+}
+
+java에 패키지 생성 > controller > HomeController.java생성
+@Controller 추가
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+publc class HomeController{
+	@RequestMapping("\home")
+	public String home(Model model){
+		model.addAttribute("hello", "Hello World");
+		return "hello";
+	}
+}
+
+main에 webapp폴더 생성 그안에 WEB-INF 폴더생성 안에 
+views폴더생성 그안에 hello.jsp생성
+
+맨윗줄<html>위에 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> 추가

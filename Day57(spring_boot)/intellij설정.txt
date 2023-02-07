@@ -1,0 +1,11 @@
+open - buile.gradle 열기
+
+
+gradle
+
+ide java버전 확인하기
+
+
+annotation processors
+
+맨위 체크

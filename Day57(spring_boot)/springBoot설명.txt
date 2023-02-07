@@ -1,0 +1,60 @@
+spring 이란
+
+
+spring boot 란
+
+개발할때 이것저것 세팅을 해야 될 요소들이 있는데
+spring boot 가 spring을 더쉽게 이용하기 위해 도와주는 도구이다
+서버가 내장되어있다
+보안, 메트릭, 상태들도 확인할수있다
+외부구성도 가능하다
+
+스프링 부트의 특징
+
+starter : 의존관계 dependency 를 간단하게 정의하는 모듈이다
+빌드 도구(gradle) : 버전을 해결, 개발을 효율화하는 플러그인 이다
+구성 클래스 : XML 이 아닌애너테이션과 자바로 설정을 작성한다
+자동 구성 : 디폴트 구성이 적용되며 필요한 부분만 설정하면 된다
+메인 class : 자바 명령으로 내장된 톰캣을 실행한다
+설정 파일 : 속성을 외부 파일에 정의 할 수 있다, 동작 사양을 쉽게 변경할 수 있다
+
+@SpringBootApplication
+// spring boot 자동설정, 스프링 bean 의 읽기 및 생성을 모두 자동으로 설정(main 최상단위치)
+// springapplication.run WAS를 실행 합니다.
+
+
+
+개발스타일
+
+database - msSql
+빌드도구(일괄관리) - gradle
+spring boot
+apache / tomcat
+springFramework
+jpa/jdbc
+springmvc
+temp엔진 - mustache
+springSecurity
+bootstrap(html, css)
+jquery
+
+
+시스템 요구사항
+
+
+개발환경
+
+java
+intellij(큰기업), eclipse(작은기업), vscode
+spring boot
+
+
+jar, war 차이점
+
+압축파일이다(아카이브)
+관련된파일을 하나로 패키징하는 역할을 해준다
+jar는 jre만 존재하면 프로젝트가 구동가능하다
+war는 별도의 웹서버 또는 was서버가 있어야 구동가능하다
+차이는 리소스를 하나로 패키징하는 과정에 차이가있다
+jsp를 사용하려면 war를 사용해야한다
+ 
