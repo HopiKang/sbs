@@ -1,0 +1,77 @@
+web Service
+- 네트워크상에서 서로다른 컴퓨터간에 www를 통해서 상호간에 작용하는것  
+- http
+- SOAP WSDL UDDI 표준기술 
+
+SOAP(Simple Object Access Protocol) 방식
+- 과거에쓰던 웹서비스
+- XML을 사용
+- 전달프로토콜 : SOAP/HTTP, SMTP
+
+RESTful 방식
+- 현재 사용하는 웹서비스
+- Json사용(XML도 사용가능)
+- 전달프로토콜 : HTTP
+
+ULI(URN, URL) : Data.html
+- Name -> URN
+- Location -> URL
+
+URI : URI는 특정 리소스를 식별하는 통합 자원 
+       식별자(Uniform Resource Identifier)를 의미한다
+
+URL : 어떻게 리소스를 얻을 것이고 어디에서 가져와야하는지 명시하는 URI
+
+URN : 리소스를 어떻게 접글할 것인지 명시하지 않고
+        경로와 리소스 자체를 특정하는 것을 목표로하는 URI 
+
+ex) https://www.lotteon.com/men/shirt?color=blue&size=m
+www.lotteon.com : host
+men/shirt : path
+?color=blue&size=m : Query (database관련)
+= : 속성 , & : 값
+
+
+MVC(Model View Controller) 패턴
+Model -(update)> View -(sees)> User -(Uses)> controller -(Maniqulates)> Model
+
+Model
+- 데이터를 가진 객체(database에 대한 정보)
+- 모델의 상태에 변화가 있을때 컨트롤러와 뷰에 이를 반환 
+
+View
+- Html/css/javascript 를 모아둔 컨테이너
+- 사용자가 볼 것을 생성하기위해 Model로 부터 정보를 얻어옴
+
+Controller
+- 사용자가 접근한 url에 따라 사용자의 요청사항을 받은 후
+  요청에 맞는 데이터를 Model에 전달하고 데이터를 View에
+  반영해서 사용자에게 알려줌
+- Model에 명령을 보냄으로써 뷰의 상태를 변경할수있음
+- Controller가 관련된 모델에 명령을 보냄으로써 뷰의 표시방법을 바꿀수있음
+
+
+Method
+GET / POST
+
+GET
+- http://localhost:8080/create?post_title=좋은날&post_name=아이유
+- 데이터를 읽거나 검색할때 사용(수정할때는 사용하지않는다)
+- 데이터의 변형의 위험없이 사용할수있다
+- 같은 요청을 여러번 하더라도 변함없이 항상 같은 응답을 받을수있다
+- 모든요청을 url에 포함해서 사용한다
+- 요청데이터값에 제한이있음
+
+POST
+- https://localhost:8080/home/create
+- 새로운 리소스를 생성할때 사용한다
+- 클라이언트에서 서버로 전송할때 추가적인 데이터를 body에 포함할수있다
+- 요청데이터값에 제한이없다
+
+처리방식               GET        POST
+URL 데이터 노출       O            X
+데이터의 위치       Header      Body
+캐싱 가능 여부         O            X
+
+
+

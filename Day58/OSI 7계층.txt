@@ -1,0 +1,29 @@
+html 
+바로 보여준다
+
+jsp
+서버에서 컴파일후에 html로 보여준다
+
+
+OSI 7계층
+통신이 일어나는 과정을 7단계로 나눠놓은것
+
+7 appication Layer
+6 Presentation Layer
+5 Session Layer
+4 Transport Layer
+3 Network Layer : 라우팅, 스위치
+2 DataLInk Layer
+1 Physical Layer
+
+TCP/IP Protocol
+Appication
+- telnet, FTP, DHCP, TFTP, HTTP, SMTP, DNS, SNMP
+
+Transport
+- TCP, UDP
+
+Internet
+- ICMP, ARP, RARP, IP
+
+
