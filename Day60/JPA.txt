@@ -1,0 +1,59 @@
+@Enumerated
+
+EnumType.ORIGINAL(기본값)
+- 순서를 데이터베이스에 저장
+EnumType.STRING
+- 이름을 데이테베이스에 저장
+- 이름그대로 데이터베이스에 저장되기때문에 맞춰줘야한다는 단점존재
+- 데이터베이스에 저장되는 데이터의 크기가 기본값보다 큰편
+
+예시
+enum RoleName{
+	ADMIN, MANGER, USER
+}
+
+@Enumerated(EnumType.ORIGINAL)
+private RoleName roleName;
+
+user.setRoleName(RoleName.ADMIN);
+
+
+@Transient
+- 임시로 사용하기위해 사용
+
+예시
+@Transient
+private Integer NameTemp;
+
+
+@Access
+- 필드접근방식을 다르게 바꿀수있다
+
+AccessType.FOELD
+- 필드에 접근방식, private도 접근가능
+AccessType.PROPERTY
+- 접근제어자인 get메서드를 이용하면된다
+
+예시
+@Entity
+@Access(AccessType.FIELD)
+public class Article{
+	@Id
+	private Long id;
+	private String title;
+	private String content;
+}
+
+
+@Column
+
+속성 		기능
+name		필드와 매핑할 테이블의 컬럼 이름을 지정할수있다
+insertable	엔티티에 저장할때 필드도 저장한다  기본값은 true
+updateable	엔티티 수정할때 필드가 같이 수정한다 기본값은 true
+table		하나의 엔티티를 두개의 테이블에 매핑할때 사용
+nullable		DDL 생성시 null값의 허용 여부를 설정 할 수 있다
+		False로 설정하면  not null 제약조건이 붙는다
+unique		@Table의 uniqueConstraints와 같으나 한컬럼에 
+		유니크 제약조건을 걸수있다
+columnDefinition	데이터베이스의 컬럼정보를 직접 줄수있다
