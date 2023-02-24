@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>UrlQueryForm</title>
+</head>
+<body>
+    <h2>Spring From Hidden</h2>
+    {{#member}}
+    <form action="/register" method="post">
+<!--        userId: <input type="text" name="userId" value="Hojin"><br>-->
+<!--        password: <input type="password" name="password" value="1234"><br>-->
+<!--        <input type="submit" value="register">-->
+
+<!--        hidden으로 불필요한 데이터를 가려줌-->
+        <input type="hidden" name="userId" value="{{userId}}">
+        <table>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="userName" value="{{userName}}"></td>
+            </tr>
+        </table>
+        <button name="regiser" type="submit">등록</button>
+    </form>
+    {{/member}}
+</body>
+</html>

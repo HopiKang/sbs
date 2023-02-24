@@ -1,0 +1,11 @@
+HTTP, HTTPS, FTP, SFTP, Telnet, POP3, SMTP, SSH, SSL, SOAP, Protocol, ARP
+
+HTTP 메소드 / 요청에 body가 있음 / 응답에 body가 있음 / 안전 / 역동(Idempotent) / 캐시 가능
+     GET		    X		          O               O                 O              O
+     HEAD	    X 		          X                O                 O              O
+     POST 	    O                            O                X                 X              O
+     PUT		    O                            O                X                 O              X              
+     DELETE	    X 		          O                X                 O              X
+     OPTION	선택사항                       O                O	           O              X
+     TRACE	    X                            O                O                 O              X
+     PATCH	    O 		          O                X	           X              O
