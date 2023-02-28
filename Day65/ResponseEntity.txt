@@ -1,0 +1,9 @@
+ResponseEntity
+- httpEntity 에서 왔음
+- httpEntity 는 HttpStatusCode(상태정보코드) 를 가진다
+
+httpEntity의 상속을 받는 객체
+RequestEntity
+ResponseEntity : 사용자의 httpRequest에 대한 응답 데이터를 포함하는 클래스이다
+- httpStatus, httpHeaders, httpBody 를 가지고있다
+- String, Void, Class, List, Map, byte 타입을 가지고있다 (응답가능)

@@ -1,0 +1,19 @@
+보통 spring boot sql 설정은 따로관리해서 여러개 들고있는다
+
+JPA가 database 에 보내는 쿼리문을 보여준다
+spring.jpa.properties.hibernate.show_sql=true
+slf4j의 로깅형태를 보여준다
+logging.level.org.hibernate.SQL=DEBUG
+
+hibernate 가 보여주는 쿼리문에 색깔을 입혀준다
+spring.jpa.properties.hibernate.format_sql=true
+
+sql 쿼리문을 보기편하게 보여준다 (여러줄로)
+spring.jpa.properties.hibernate.highlight_sql=true
+
+보다 쉬운 디버깅을 위해 sql 내부에 주석을 추가한다
+spring.jap.properties.hibernate.use_sql_comments=true
+
+최신버전에 사용가능하다
+쿼리문의 id 값을 보여준다
+logging.level.org.hibernate.orm.jdbc.hind=trace
