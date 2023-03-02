@@ -1,0 +1,26 @@
+{{>layouts/header}}
+<table class="container table table-dark table-striped">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#article}}
+        <tr>
+            <th>{{id}}</th>
+            <th>{{title}}</th>
+            <th>{{content}}</th>
+        </tr>
+    {{/article}}
+    </tbody>
+</table>
+<button type="button" class="btn btn-outline-secondary">
+    <a href="/articles/{{article.id}}/edit"></a>
+</button>
+<button type="button" class="btn btn-outline-secondary">
+    <a href="/articles">목록</a>
+</button>
+{{>layouts/footer}}
