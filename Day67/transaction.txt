@@ -1,0 +1,38 @@
+트렌젝션
+ACID(속성)
+A 원자성 : 모든것 또는 아무것도 아닌것, 전부성공 아니면 실패 라는뜻
+C 일관성 : 데이터베이스에 일관된 상태로 유지되야한다
+I 고립성 : 다른 트랜젝션에 영향을 받지않는다
+D 지속성 : 영구적으로 데이터베이스에 저장되서 유지되는것
+
+예시)
+public class Stream {
+    public static void main(String[] args) {
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6);
+//        Iterator<Integer> iter = list.iterator();
+        Stream<Integer> stream = list.stream();
+
+        stream.foEech(Integer i) -> {
+            System.out.println(i);
+        }
+
+        while (iter.hasNext()){
+            System.out.println(iter.next());
+        }
+    }
+}
+
+class Parser{
+    public static List<Integer> strToList (List<String> strList){
+//        List<Integer> intList = new ArrayList<>();
+//
+//        for (String value : strList){
+//            intList.add(Integer.parseInt(value));
+//        }
+//        return intList;
+
+        // 위 코드를 한줄로 줄일수있다
+        return strList.stream().map(Integer::parseInt).collect(Collectors.toList());
+
+    }
+}

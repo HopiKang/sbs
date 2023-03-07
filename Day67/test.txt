@@ -1,0 +1,13 @@
+JPA repository는 1 대 1로 매칭된다
+
+JpaRepository<클래스. id>
+
+1. 기본형의 경우에는 래퍼 클래스를 지정한다
+2. 클래스를 선ㅇ너하는 앞부분에 @Repository 를 붙혀 놓아서 jpa 라는걸 알려야한다
+
+nativeQuery = true 로 설정하면 defalut값으로  JPQL문법을 사용할수있다
+JPQL문법은 jpa에서 사용하는 문법이다
+
+Entity 영속 => 임시로 담기 위한 공간 @Transactional 로 묶어서 관린한다
+
+@Entity 다음시간에 계속..

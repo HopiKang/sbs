@@ -1,0 +1,7 @@
+서비스 service
+
+Client > RestController > Service > Repository > Database
+
+계층을 의미한다
+업무(transaction)의 처리순서를 총괄해준다
+
