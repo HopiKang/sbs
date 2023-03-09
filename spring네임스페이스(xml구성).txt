@@ -1,0 +1,199 @@
+jpa 를 사용하기 위해서
+인터넷에 jap를 이용해서 데이터베이스를 사용하는방법을 찾아보게된다
+의존성을 사용해서 사용하는것들은 maven(xml)이나 빌드를 추가해서 사용하게된다
+gradle 이란 maven 이 성장한 버전이라고 보면된다
+
+1. spring 네임스페이스 xml 구성(구버전)
+2. 어노테이션 기반 구성 java 형식(최신버전)
+
+jpa Interface 방법
+
+스프링 데이터
+Repository(최소한의 Repository ) 
+< crudRepository(페이징 x, 소팅 x) 
+- save(s) : 새로은 엔티티는 저장하고 이미 존재하는 엔티티는 수정한다, 
+  식별자(null) 이없으면 새로운 EntityManater.persist() 를 호출하고
+  식별자가 있으면 EntityManate.merge() 를 호출함
+- delete(t) : 엔티티 하나를 삭제한다, 내부에서는 EntityManager.remove() 를 호출함
+fintOne(id) : 엔티티 하나를 조회한다, 내부에서는 EntityManager.find() 를 호출한다
+getOne(id) : 엔티티를 프록시로 조회한다, 내부에서는 EntityManager.getReference() 를 호출함
+findAll() : 모든 엔티티를 조회한다, 정렬이나 페이지 조건을 파라미터로 제공한다
+< PagingAndSortingRepository(crud + 페이징, 소팅)
+< jpaRepository(페이징, 소팅)
+
+jpa는 Query Methods 를 이용해서 이름만으로 데이터를 조회하거나 수정할 수 있다
+
+JPQL(JAVA Persistence Query Language)
+1. 메소드 이름으로 쿼리 생성
+2. 메소드 이름으로 JPA NamedQuery 를 호출한다
+3. @Query 어노테이션을 사용해서 레파지토리 인터페이스에 쿼리를 직접 정의해서 사용할 수 있다
+
+jqpl
+메서드 이름을 작성하는방법(메서드 이름만으로 데이터를 조회)
+- 메서드 이름작성
+findBy, readBy, queryBy, countBy, getBy 등을 사용해서 검색 조건명을 명시한다
+
+- 검색조건
+검색 조건이 여러개인 경우 and, or, Between, LessThan, GreaterThan 을 사용해서 연결한다
+
+- 결과 처리
+검색 결과를 어떻게 처리할지에 대한 메소드 이름을 추가해야한다
+Count, Delete, Distinct, First, Top 키워드를 사용하여 처리방식을 지정할 수 있다
+
+예시)
+// 리스트의 유저타입의 Name의 키워드를 분석해서 찾아온다
+// 메서드이름을 분석해서 jpql을 실행한다
+List<User> findByName(String name);
+// 밑의 쿼리줄로 이해할수있다
+select u from User u where u.name = ?1
+
+@NamedQuery
+- 엔티티 클래스의 필드나 메소드에서 사용가능
+- 속성을 지정할수있다
+- name : Named Query의 이름을 지정할수있다
+- query : Named Query의 SQL 쿼리를 지정할수있다
+
+예시)
+User.java
+@Entity
+@NamedQuery(name = "User.findByName", query = "select u from User u where u.name = :name")
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String email;
+}
+// EntityManager.createNamedQuery() 를 호출하게됨
+
+
+레파지토리 쿼리 사용법
+    
+    public List<User> findByName(String name){
+        List<User> query = entityManager.createNameQuery("User.findByName", User.class);
+//      쿼리를 파라미터 값으로 설정
+        query.setParameter("name", "제니");
+        List<User> users = query.getResultList();
+    }
+
+    public List<User> findByName(String name){
+        List<User> query = entityManager.createNameQuery("User.findByName", User.class);
+        .setParameter("name", "제니")
+                .getResultList();
+    }
+
+
+
+XML 쿼리로 정의해서 쓰는방법
+resources - META-INF 폴더안에 orm.xml파일을 만들어서 사용함
+예시)
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings
+        xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+        version="2.0">
+    <named-native-query name="findByName" result-class="com.example.model.User">
+        <query>
+            <![CDATA[
+                SELECT * FROM USER WHERE NAME = :NAME
+                ]]>
+        </query>
+    </named-native-query>
+</entity-mappings>
+
+
+
+@Query 어노테이션 옵션
+예시)
+    
+    @Query(value = "select e from User e where e.department = :department", nativeQuery = true)
+//    @Param() 안의 값은 이름기반으로 만든 쿼리문을 의미한다
+    List<User> findByDepartment(@Param("department") String departmentName);
+//    department 가 파라미터고 departmentName 은 대신받는 변수가된다
+    
+nativeQuery : 네이티브 쿼리를 사용할때 true로 설정해야한다
+value : 실행할 jpql 도는 네이티브 SQL 쿼리를 작성한다
+countQuery : 페이징 처리를 할때 전체 데이터 수를 조회할 jpql또는 네이티브 SQL 쿼리르 작성한다
+lockMode : 데이터베이스에서 읽어온 엔티티를 잠금처리할때 사용한다
+flushMode : 영속성 컨테스트에 있는 엔티티의 상태를 데이터 베이스에 반영할때 사용한다
+maxResults : 조회결과의 최대개수를 제한할수있다
+firstResults : 조회결과의 첫번째 인덱스를 지정할수있다
+
+
+정렬
+org.springframework.data.domain.Sort 정렬기능
+org.springframework.data.domain.Pageable 페이징기능
+
+
+count 쿼리 사용
+Page<User> findByName(String name, Pageable pageable);
+count 쿼리 미사용
+List<User> findByName(String name, Pageable pageable);
+
+
+
+    Page<User> findByNameStartWith(String name, Pageable pageable);
+//    첫번째파라미터는 현재페이지 두번째파라미터는 조회할 페이지의수 Sort는 정렬정보이다
+    PageRequest pagerequest = new PageRequest(0, 10, new Sort(Sort.Direction.DESC, "name"));
+    Page<User> result = UserRepository.findByNameStartWith("아", pagerequest);
+    List<User> users = result.getContent();
+//    전체 페이지수
+    int totalPages = result.getTotalPages();
+    boolean hasNextPage = result.hasNext();
+
+
+
+select u from User u where u.name = ?1  기본값은 위치기반
+select u from User u where u.name = :name  이름기반
+
+
+Entity : find() 를 사용함, EntityManager.find(MyEntity.class, id)
+DTO : 여러개의 엔티티를 조인해서 사용함
+Cllection(List, Set)
+Scalar : 
+- Object, Long, Interger를 사용할수있다, 
+- EntityManager.createQuery("Select count(e) from MyEntity e", Long.class).getSingleResult()
+
+조회타입
+List<User> findByName(String name); 컬렉션타입
+User findByEmail(String email); 단건타입
+
+
+페이지 처리방식
+- setFirstResult() 시작위치, setMaxResult() 조회할 데이터의 수
+- em.createQuery("select e from MyEntity").setFirstResult(0).setMaxResults(10).getResultList()
+정렬 처리방식
+- em.createQuery()
+- em.createQuery("select e from MyEntity e order by e.id desc").getResultList() 내림차순정렬(desc)
+페이징과 정렬 조합
+- setFirstResult(), setMaxResult() 사용해서 페이징 처리를 먼저 수행
+- 그다음 order by 절을 사용해서 정렬
+- em.createQuery("select e from MyEntity e order by e.id desc").setFirstResult(0)
+  .setMaxResult(10).getResultList()
+
+
+getContent() : 현재 페이지에 포함된 데이터 목록을 반환한다
+getTotalElements() : 전체 데이터의 개수를 반환
+getTotalPages() : 전체 페이지수를 반환
+getNumber() : 현재 페이지 번호를 반환
+getNumberOfElements() : 현재 페이지에 포함된 데이터 개수를 반환
+getSize() : 페이지의 크기를 반환
+hasContent() : 현재 페이지에 데이터가 있는지 여부를 반환
+hasNext() : 다음 페이지가 잇는지 여부를 반환
+hasPrevious() : 이전 페이지가 있는지 여부를 반환
+isFirst() : 현재 페이지가 첫번째 페이지인지 여부를 반환
+isLast() : 현재 페이지가 마지막 페이지인지 여부를 반환
+
+
+@QueryHints : 쿼리 실행 시 옵션을 지정 할 수 있다
+캐시, 로딩, 플러시
+예시)
+@QueryHints(value = {@QueryHints(name = "javax.persistence.fetchgraph", value = MyEntity.detail)})
+    @Query("select e from MyEntity e where e.id = :id")
+    MyEntity findByIdWithDetail(@Param("id") Long id)
+
+@Lock 자바의 동시성을 제어할수잇다
+- 엔티티나 쿼리에 적용하여 사용할수있다
+- 예시) @Lock(LockModeType.OPTIMISTIC)
+- 여러 트렉젝션이 발생할때 다른접근에서 엔티티를 바꾸는걸 막아줄수있다
