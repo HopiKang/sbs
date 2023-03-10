@@ -1,0 +1,39 @@
+데이터베이스란
+
+우리가 만드는 데이터베이스는 관계형 데이터베이스다
+각각의 테이블이 관계를 맺고있다는 뜻
+
+스프링 자체 자바언어도 관계형이다
+지금가지 객체지향형 프로그래밍을 해왔다
+
+그게 jpa형 관계형 데이터베이스다
+엔티티 간의 관계가 중요하다
+일대일, 일대다, 다대일, 다대다 관계가있다
+@ManyToOne
+@OneToMany
+@OneToOne
+@ManyToMany
+@Entity
+예시)
+public class Psot {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String title;
+    private String content;
+
+    @OneToMany(mappedBy = "post")
+    private List<student> students = new ArrayList<>()
+}
+
+public class student{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String student;
+
+    @ManyToOne
+//    외래키
+    @JoinColumn(name = "post_id")
+    private Post post;
+}
