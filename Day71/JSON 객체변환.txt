@@ -1,0 +1,8 @@
+json 객체를 변환하는것
+직렬화 비직렬화가 있다
+
+javaScript 직렬화 : 객체를 문자열 형식으로 변환
+- JSON.stringfy() : 자바스크립트 객체를 json 문자열로 직렬화하고 객체를 문자열로 반환하는데사용 
+
+javaScript 비직렬화 : json형식의 문자열을 javaScript객체로 변환하는 과정
+- JSON.parse() : json 문자열을 자바스크립트 객체로 변환해줌
